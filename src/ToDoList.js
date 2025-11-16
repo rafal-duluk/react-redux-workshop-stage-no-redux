@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_TODO, REMOVE_TODO } from './store/todosReducer';
+import { addTodo, removeTodo } from './store/todosSlice';
 
 export default function TodoList() {
   const dispatch = useDispatch();
-  const todos = useSelector(state => state.todos.items);
+  const todos = useSelector(state => state.todos);
 
   const handleAddTodo = () => {
-    dispatch({ type: ADD_TODO, payload: "Nowe zadanie" });
+    dispatch(addTodo("Nowe zadanie"));
   };
 
   const handleRemove = (index) => {
-    dispatch({ type: REMOVE_TODO, payload: index })
+    dispatch(removeTodo(index))
   }
 
   return (
