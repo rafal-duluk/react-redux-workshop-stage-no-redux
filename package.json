@@ -10,6 +10,12 @@
     "react-scripts": "5.0.1",
     "redux": "^5.0.1"
   },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-redux": "^7.1.25"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -29,3 +35,5 @@
     ]
   }
 }
+
+

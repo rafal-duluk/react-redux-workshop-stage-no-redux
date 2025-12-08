@@ -1,17 +1,19 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, removeTodo } from './store/todosSlice';
+import type { RootState, AppDispatch } from './store/store';
 
-export default function TodoList() {
-  const dispatch = useDispatch();
-  const todos = useSelector(state => state.todos);
+export default function TodoList(): JSX.Element {
+  const dispatch = useDispatch<AppDispatch>();
+  const todos = useSelector((state: RootState) => state.todos);
 
   const handleAddTodo = () => {
-    dispatch(addTodo("Nowe zadanie"));
+    dispatch(addTodo('Nowe zadanie'));
   };
 
-  const handleRemove = (index) => {
-    dispatch(removeTodo(index))
-  }
+  const handleRemove = (index: number) => {
+    dispatch(removeTodo(index));
+  };
 
   return (
     <div>
@@ -22,7 +24,7 @@ export default function TodoList() {
             {task}
             <button onClick={() => handleRemove(i)}>Remove</button>
           </li>
-          ))}
+        ))}
       </ul>
     </div>
   );
