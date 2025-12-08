@@ -4,7 +4,9 @@ import todosReducer from './todosReducer';
 
 const rootReducer = combineReducers({
   counter: counterReducer,
-  todos: todosReducer
+  todos: todosReducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export const store = createStore(rootReducer);
