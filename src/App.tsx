@@ -6,7 +6,6 @@ function App(): JSX.Element {
     <div>
       <h1>Workshop – React State & Redux</h1>
       <Counter />
-      <p></p>
       <TodoList />
     </div>
   );
