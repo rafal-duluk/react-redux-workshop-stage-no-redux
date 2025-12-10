@@ -8,7 +8,8 @@ const todosSlice = createSlice({
       state.push(action.payload);
     },
     removeTodo(state, action: PayloadAction<number>) {
-      return state.filter((_, i) => i !== action.payload);
+      return state.filter((_, i) => i !== action.payload); //zwracam nowy stan; nie korzystam z Immera
+      // state.splice(action.payload, 1); //mutowanie stanu dzięki Immer
     }
   }
 });
